@@ -28,7 +28,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="grain">
+      <body>
         <Header />
         <main>{children}</main>
         <Footer />
