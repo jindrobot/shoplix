@@ -75,7 +75,7 @@ export default async function ProductPage({
                 className="inline-flex h-12 items-center gap-2 rounded-xl px-7 font-[family-name:var(--font-display)] text-sm font-semibold text-white transition-all hover:scale-[1.02] active:scale-[0.98]"
                 style={{ backgroundColor: product.color }}
               >
-                Koupit za {product.priceFormatted}/měs
+                Koupit za {product.priceFormatted}
               </Link>
               <span className="text-sm text-text-dim">
                 14 dní zdarma · Bez karty

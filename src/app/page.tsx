@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "Jak funguje fakturace?",
-    a: "Platíte měsíčně, vždy na začátku období. Přijímáme platby kartou i bankovním převodem. Faktury vystavujeme automaticky.",
+    a: "Platíte jednorázově za licenci. Přijímáme platby kartou i bankovním převodem. Faktury vystavujeme automaticky.",
   },
   {
     q: "Nabízíte slevu pro více produktů najednou?",
@@ -73,8 +73,8 @@ export default function Home() {
             </h1>
 
             <p className="animate-fade-in-up delay-200 mx-auto mt-6 max-w-xl text-lg leading-relaxed text-text-muted md:text-xl">
-              Synchronizace, automatizace, monitoring cen a správa recenzí.
-              Čtyři nástroje navržené pro český e-commerce trh.
+              Od CSV exportu po monitoring konkurence. Osm nástrojů navržených
+              pro český e-commerce — od 49 Kč.
             </p>
 
             <div className="animate-fade-in-up delay-300 mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -119,15 +119,15 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold tracking-tight md:text-4xl">
-              Čtyři nástroje, jeden cíl
+              Osm nástrojů pro váš e-shop
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-text-muted">
-              Každý řeší konkrétní bolest. Kombinujte je, nebo začněte s jedním
-              — fungují skvěle samostatně i dohromady.
+              Od jednoduchého CSV exportu až po pokročilý monitoring cen.
+              Jednorázová licence — žádné měsíční poplatky.
             </p>
           </div>
 
-          <div className="mt-16 grid gap-7 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
             {products.map((product, i) => (
               <ProductCard key={product.slug} product={product} index={i} />
             ))}

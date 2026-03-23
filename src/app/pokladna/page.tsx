@@ -45,12 +45,12 @@ export default function PokladnaPage() {
                       name="product"
                       value={p.slug}
                       className="accent-accent"
-                      defaultChecked={p.slug === "shopsync-pro"}
+                      defaultChecked={p.slug === "shopsync-lite"}
                     />
                     <div>
                       <div className="text-sm font-medium">{p.name}</div>
                       <div className="text-xs text-text-dim">
-                        {p.priceFormatted}/měs
+                        {p.priceFormatted}
                       </div>
                     </div>
                   </label>
@@ -142,18 +142,14 @@ export default function PokladnaPage() {
               </h3>
               <div className="mt-6 space-y-3 border-b border-border pb-6 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-text-muted">Produkt</span>
-                  <span>ShopSync Pro</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-text-muted">Období</span>
-                  <span>Měsíčně</span>
+                  <span className="text-text-muted">Typ licence</span>
+                  <span>Jednorázová</span>
                 </div>
               </div>
               <div className="mt-6 flex justify-between">
                 <span className="text-text-muted">Celkem</span>
                 <span className="font-[family-name:var(--font-display)] text-xl font-bold">
-                  2 490 Kč
+                  od 49 Kč
                 </span>
               </div>
               <p className="mt-4 text-xs text-text-dim">

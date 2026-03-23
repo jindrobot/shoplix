@@ -14,6 +14,19 @@ export function ProductCard({
       className="group relative flex flex-col rounded-2xl border border-border bg-bg-card transition-all duration-300 hover:border-border-light hover:bg-bg-card-hover hover:-translate-y-1"
       style={{ animationDelay: `${index * 0.1 + 0.2}s` }}
     >
+      {/* Badge */}
+      {product.badge && (
+        <div
+          className="absolute -top-2.5 right-4 z-10 rounded-full px-3 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white"
+          style={{
+            backgroundColor:
+              product.badge === "bestseller" ? "#E8553A" : "#10B981",
+          }}
+        >
+          {product.badge === "bestseller" ? "Bestseller" : "Novinka"}
+        </div>
+      )}
+
       {/* Accent bar */}
       <div
         className="h-1 w-full rounded-t-2xl transition-all duration-300 group-hover:h-1.5"
@@ -62,7 +75,6 @@ export function ProductCard({
             <span className="font-[family-name:var(--font-display)] text-2xl font-bold">
               {product.priceFormatted}
             </span>
-            <span className="ml-1 text-sm text-text-dim">/měs</span>
           </div>
           <span
             className="rounded-lg px-3 py-1.5 text-xs font-semibold transition-all duration-300 group-hover:scale-105"

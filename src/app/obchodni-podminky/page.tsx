@@ -57,9 +57,9 @@ export default function ObchodniPodminkyPage() {
             </h2>
             <p>
               Předmětem smlouvy je poskytování softwarových nástrojů pro e-commerce
-              (ShopSync Pro, OrderFlow, PriceGuard, ReviewBoost) formou měsíčního
-              předplatného (SaaS). Poskytovatel se zavazuje zpřístupnit zákazníkovi
-              vybraný produkt po dobu trvání předplatného.
+              (QuickCSV, StockAlert, SEO Meta, ShopSync Lite, ReviewBoost, OrderFlow,
+              ShopSync Pro, PriceGuard) formou jednorázové licence. Poskytovatel se
+              zavazuje zpřístupnit zákazníkovi vybraný produkt po zaplacení licence.
             </p>
           </section>
 
@@ -90,7 +90,7 @@ export default function ObchodniPodminkyPage() {
             <ol className="list-decimal space-y-2 pl-5">
               <li>Ceny jsou uvedeny bez DPH.</li>
               <li>
-                Platby se provádějí měsíčně, vždy na začátku fakturačního období.
+                Platba se provádí jednorázově při nákupu licence.
               </li>
               <li>
                 Akceptujeme platby kartou a bankovním převodem.
