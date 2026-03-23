@@ -11,16 +11,16 @@ export function ProductCard({
   return (
     <Link
       href={`/produkt/${product.slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-bg-card transition-all duration-300 hover:border-border-light hover:bg-bg-card-hover hover:-translate-y-1"
+      className="group relative flex flex-col rounded-2xl border border-border bg-bg-card transition-all duration-300 hover:border-border-light hover:bg-bg-card-hover hover:-translate-y-1"
       style={{ animationDelay: `${index * 0.1 + 0.2}s` }}
     >
       {/* Accent bar */}
       <div
-        className="h-1 w-full transition-all duration-300 group-hover:h-1.5"
+        className="h-1 w-full rounded-t-2xl transition-all duration-300 group-hover:h-1.5"
         style={{ backgroundColor: product.color }}
       />
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-7 md:p-8">
         {/* Icon */}
         <div
           className="flex h-12 w-12 items-center justify-center rounded-xl text-xl"
@@ -41,7 +41,7 @@ export function ProductCard({
         </p>
 
         {/* Features */}
-        <ul className="mt-5 flex-1 space-y-2">
+        <ul className="mt-6 flex-1 space-y-2.5">
           {product.features.slice(0, 3).map((f) => (
             <li
               key={f}
@@ -57,7 +57,7 @@ export function ProductCard({
         </ul>
 
         {/* Price + CTA */}
-        <div className="mt-6 flex items-end justify-between">
+        <div className="mt-8 flex items-end justify-between">
           <div>
             <span className="font-[family-name:var(--font-display)] text-2xl font-bold">
               {product.priceFormatted}

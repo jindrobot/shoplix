@@ -89,7 +89,7 @@ export default async function ProductPage({
               {product.stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-xl border border-border bg-bg-card p-5"
+                  className="rounded-xl border border-border bg-bg-card p-6"
                 >
                   <div className="font-[family-name:var(--font-display)] text-2xl font-bold">
                     {stat.value}

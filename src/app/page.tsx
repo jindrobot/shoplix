@@ -95,7 +95,7 @@ export default function Home() {
           </div>
 
           {/* Stats row */}
-          <div className="animate-fade-in-up delay-500 mx-auto mt-20 grid max-w-2xl grid-cols-3 gap-8">
+          <div className="animate-fade-in-up delay-500 mx-auto mt-24 grid max-w-2xl grid-cols-3 gap-8 pb-4">
             {[
               { value: "850+", label: "E-shopů" },
               { value: "4.2M", label: "Produktů" },
@@ -115,7 +115,7 @@ export default function Home() {
       </section>
 
       {/* ═══ PRODUKTY ═══ */}
-      <section id="produkty" className="py-24 md:py-32">
+      <section id="produkty" className="py-28 md:py-36">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold tracking-tight md:text-4xl">
@@ -127,7 +127,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid gap-7 md:grid-cols-2 lg:grid-cols-4">
             {products.map((product, i) => (
               <ProductCard key={product.slug} product={product} index={i} />
             ))}
@@ -151,12 +151,12 @@ export default function Home() {
             {testimonials.map((t) => (
               <div
                 key={t.name}
-                className="flex flex-col rounded-2xl border border-border bg-bg-card p-6"
+                className="flex flex-col rounded-2xl border border-border bg-bg-card p-7 md:p-8"
               >
                 <p className="flex-1 text-sm leading-relaxed text-text-muted">
                   &ldquo;{t.text}&rdquo;
                 </p>
-                <div className="mt-6 flex items-center gap-3 border-t border-border pt-5">
+                <div className="mt-8 flex items-center gap-3 border-t border-border pt-6">
                   <div className="flex h-9 w-9 items-center justify-center rounded-full bg-bg-elevated font-[family-name:var(--font-display)] text-xs font-bold text-accent">
                     {t.name
                       .split(" ")
@@ -186,19 +186,19 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-16 space-y-4">
+          <div className="mt-16 space-y-5">
             {faqs.map((faq) => (
               <details
                 key={faq.q}
                 className="group rounded-xl border border-border bg-bg-card transition-colors open:bg-bg-card-hover"
               >
-                <summary className="flex cursor-pointer items-center justify-between px-6 py-5 font-[family-name:var(--font-display)] text-sm font-semibold [&::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer items-center justify-between px-7 py-6 font-[family-name:var(--font-display)] text-sm font-semibold [&::-webkit-details-marker]:hidden">
                   {faq.q}
-                  <span className="ml-4 text-text-dim transition-transform group-open:rotate-45">
+                  <span className="ml-4 flex-shrink-0 text-text-dim transition-transform group-open:rotate-45">
                     +
                   </span>
                 </summary>
-                <div className="px-6 pb-5 text-sm leading-relaxed text-text-muted">
+                <div className="px-7 pb-6 text-sm leading-relaxed text-text-muted">
                   {faq.a}
                 </div>
               </details>
