@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Shoplix — E-commerce nástroje pro český trh",
+  title: "Modkit — E-commerce nástroje pro český trh",
   description:
     "Prémiové pluginy pro e-shopy. Synchronizace, automatizace objednávek, monitoring cen a správa recenzí. Vytvořeno pro WooCommerce, Shoptet a Shopify.",
 };

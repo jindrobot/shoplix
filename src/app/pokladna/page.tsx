@@ -3,8 +3,8 @@ import Link from "next/link";
 import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
-  title: "Pokladna — Shoplix",
-  description: "Dokončete objednávku vašeho Shoplix nástroje.",
+  title: "Pokladna — Modkit",
+  description: "Dokončete objednávku vašeho Modkit nástroje.",
 };
 
 export default function PokladnaPage() {
@@ -13,7 +13,7 @@ export default function PokladnaPage() {
       <div className="mx-auto max-w-4xl px-6">
         <nav className="mb-10 flex items-center gap-2 text-sm text-text-dim">
           <Link href="/" className="transition-colors hover:text-text-muted">
-            Shoplix
+            Modkit
           </Link>
           <span>/</span>
           <span className="text-text-muted">Pokladna</span>

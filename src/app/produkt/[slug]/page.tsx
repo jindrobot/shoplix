@@ -16,7 +16,7 @@ export async function generateMetadata({
   const product = getProduct(slug);
   if (!product) return {};
   return {
-    title: `${product.name} — Shoplix`,
+    title: `${product.name} — Modkit`,
     description: product.tagline,
   };
 }
@@ -36,7 +36,7 @@ export default async function ProductPage({
         {/* Breadcrumb */}
         <nav className="mb-10 flex items-center gap-2 text-sm text-text-dim">
           <Link href="/" className="transition-colors hover:text-text-muted">
-            Shoplix
+            Modkit
           </Link>
           <span>/</span>
           <Link

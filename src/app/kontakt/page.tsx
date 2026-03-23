@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Kontakt — Shoplix",
+  title: "Kontakt — Modkit",
   description: "Ozvěte se nám. Rádi pomůžeme s výběrem nástroje pro váš e-shop.",
 };
 
@@ -12,7 +12,7 @@ export default function KontaktPage() {
       <div className="mx-auto max-w-4xl px-6">
         <nav className="mb-10 flex items-center gap-2 text-sm text-text-dim">
           <Link href="/" className="transition-colors hover:text-text-muted">
-            Shoplix
+            Modkit
           </Link>
           <span>/</span>
           <span className="text-text-muted">Kontakt</span>
@@ -88,10 +88,10 @@ export default function KontaktPage() {
                 E-mail
               </h3>
               <a
-                href="mailto:podpora@shoplix.cz"
+                href="mailto:info@modkit.co"
                 className="mt-2 block text-sm text-accent transition-colors hover:text-accent-hover"
               >
-                podpora@shoplix.cz
+                info@modkit.co
               </a>
               <p className="mt-1 text-xs text-text-dim">
                 Odpovídáme ve všední dny, 9–18 h

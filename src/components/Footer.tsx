@@ -71,7 +71,7 @@ export function Footer() {
 
         {/* Spodní lišta */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-xs text-text-dim md:flex-row">
-          <p>© {new Date().getFullYear()} Shoplix. Všechna práva vyhrazena.</p>
+          <p>© {new Date().getFullYear()} Modkit. Všechna práva vyhrazena.</p>
           <p>
             Provozovatel: Šárka Váňová · IČO: 10817395
           </p>

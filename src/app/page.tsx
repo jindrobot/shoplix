@@ -24,7 +24,7 @@ const testimonials = [
 
 const faqs = [
   {
-    q: "Pro jaké platformy Shoplix funguje?",
+    q: "Pro jaké platformy Modkit funguje?",
     a: "Naše nástroje podporují WooCommerce, Shoptet, Shopify, PrestaShop a Magento. Na dalších integracích průběžně pracujeme.",
   },
   {

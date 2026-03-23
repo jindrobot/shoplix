@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Obchodní podmínky — Shoplix",
-  description: "Obchodní podmínky služby Shoplix.",
+  title: "Obchodní podmínky — Modkit",
+  description: "Obchodní podmínky služby Modkit.",
 };
 
 export default function ObchodniPodminkyPage() {
@@ -12,7 +12,7 @@ export default function ObchodniPodminkyPage() {
       <div className="mx-auto max-w-3xl px-6">
         <nav className="mb-10 flex items-center gap-2 text-sm text-text-dim">
           <Link href="/" className="transition-colors hover:text-text-muted">
-            Shoplix
+            Modkit
           </Link>
           <span>/</span>
           <span className="text-text-muted">Obchodní podmínky</span>
@@ -45,9 +45,9 @@ export default function ObchodniPodminkyPage() {
             </h2>
             <p>
               Tyto obchodní podmínky (dále jen „podmínky") upravují vztahy mezi
-              provozovatelem služby Shoplix (dále jen „poskytovatel") a uživateli
+              provozovatelem služby Modkit (dále jen „poskytovatel") a uživateli
               služeb (dále jen „zákazník"). Podmínky se vztahují na všechny služby
-              a produkty nabízené prostřednictvím webu shoplix.cz.
+              a produkty nabízené prostřednictvím webu modkit.co.
             </p>
           </section>
 
@@ -132,7 +132,7 @@ export default function ObchodniPodminkyPage() {
                 bez udání důvodu.
               </li>
               <li>
-                Reklamace vyřizujeme e-mailem na adrese podpora@shoplix.cz
+                Reklamace vyřizujeme e-mailem na adrese info@modkit.co
                 v zákonné lhůtě 30 dnů.
               </li>
             </ol>
