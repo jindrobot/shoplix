@@ -2,9 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useTranslations } from "@/lib/i18n";
+import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const t = useTranslations();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-bg/80 backdrop-blur-xl">
@@ -22,38 +25,42 @@ export function Header() {
             href="/#produkty"
             className="text-sm text-text-muted transition-colors hover:text-text"
           >
-            Produkty
+            {t.header.products}
           </Link>
           <Link
             href="/kontakt"
             className="text-sm text-text-muted transition-colors hover:text-text"
           >
-            Kontakt
+            {t.header.contact}
           </Link>
           <Link
             href="/obchodni-podminky"
             className="text-sm text-text-muted transition-colors hover:text-text"
           >
-            Podmínky
+            {t.header.terms}
           </Link>
+          <LocaleSwitcher />
         </nav>
 
-        {/* Mobile hamburger */}
-        <button
-          className="flex flex-col gap-1.5 md:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
-        >
-          <span
-            className={`block h-0.5 w-6 bg-text transition-transform ${menuOpen ? "translate-y-2 rotate-45" : ""}`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-text transition-opacity ${menuOpen ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-text transition-transform ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`}
-          />
-        </button>
+        {/* Mobile: switcher + hamburger */}
+        <div className="flex items-center gap-3 md:hidden">
+          <LocaleSwitcher />
+          <button
+            className="flex flex-col gap-1.5"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+          >
+            <span
+              className={`block h-0.5 w-6 bg-text transition-transform ${menuOpen ? "translate-y-2 rotate-45" : ""}`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-text transition-opacity ${menuOpen ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-text transition-transform ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`}
+            />
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -65,21 +72,21 @@ export function Header() {
               onClick={() => setMenuOpen(false)}
               className="text-text-muted transition-colors hover:text-text"
             >
-              Produkty
+              {t.header.products}
             </Link>
             <Link
               href="/kontakt"
               onClick={() => setMenuOpen(false)}
               className="text-text-muted transition-colors hover:text-text"
             >
-              Kontakt
+              {t.header.contact}
             </Link>
             <Link
               href="/obchodni-podminky"
               onClick={() => setMenuOpen(false)}
               className="text-text-muted transition-colors hover:text-text"
             >
-              Podmínky
+              {t.header.terms}
             </Link>
           </div>
         </nav>

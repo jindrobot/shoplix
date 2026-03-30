@@ -442,3 +442,36 @@ export const products: Product[] = [
 export function getProduct(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
 }
+
+// Get localized product data by merging base product with translation overrides
+import type { Translations } from "@/lib/translations/types";
+
+export function getLocalizedProduct(
+  slug: string,
+  t: Translations
+): Product | undefined {
+  const base = getProduct(slug);
+  if (!base) return undefined;
+  const tr = t.productData[slug];
+  if (!tr) return base;
+
+  return {
+    ...base,
+    tagline: tr.tagline,
+    description: tr.description,
+    features: tr.features,
+    detailFeatures: base.detailFeatures.map((df, i) => ({
+      ...df,
+      title: tr.detailFeatures[i]?.title ?? df.title,
+      description: tr.detailFeatures[i]?.description ?? df.description,
+    })),
+    stats: base.stats?.map((s, i) => ({
+      ...s,
+      label: tr.stats?.[i]?.label ?? s.label,
+    })),
+  };
+}
+
+export function getLocalizedProducts(t: Translations): Product[] {
+  return products.map((p) => getLocalizedProduct(p.slug, t)!);
+}

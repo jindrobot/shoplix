@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslations } from "@/lib/i18n";
 
 export function Footer() {
+  const t = useTranslations();
+
   return (
     <footer className="border-t border-border bg-bg">
       <div className="mx-auto max-w-6xl px-6 py-16">
@@ -14,15 +19,14 @@ export function Footer() {
               <span className="text-accent">shop</span>lix
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-text-muted">
-              Prémiové nástroje pro české e-shopy. Automatizujte, synchronizujte
-              a rostěte — bez kompromisů.
+              {t.footer.tagline}
             </p>
           </div>
 
           {/* Navigace */}
           <div>
             <h4 className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-widest text-text-dim">
-              Produkty
+              {t.footer.productsHeading}
             </h4>
             <ul className="mt-4 space-y-2.5">
               {[
@@ -46,7 +50,7 @@ export function Footer() {
           {/* Právní */}
           <div>
             <h4 className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-widest text-text-dim">
-              Informace
+              {t.footer.infoHeading}
             </h4>
             <ul className="mt-4 space-y-2.5">
               <li>
@@ -54,7 +58,7 @@ export function Footer() {
                   href="/kontakt"
                   className="text-sm text-text-muted transition-colors hover:text-accent"
                 >
-                  Kontakt
+                  {t.footer.contact}
                 </Link>
               </li>
               <li>
@@ -62,7 +66,7 @@ export function Footer() {
                   href="/obchodni-podminky"
                   className="text-sm text-text-muted transition-colors hover:text-accent"
                 >
-                  Obchodní podmínky
+                  {t.footer.terms}
                 </Link>
               </li>
             </ul>
@@ -71,10 +75,8 @@ export function Footer() {
 
         {/* Spodní lišta */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-xs text-text-dim md:flex-row">
-          <p>© {new Date().getFullYear()} Modkit. Všechna práva vyhrazena.</p>
-          <p>
-            Provozovatel: Šárka Váňová · IČO: 10817395
-          </p>
+          <p>&copy; {new Date().getFullYear()} {t.footer.copyright}</p>
+          <p>{t.footer.operator}</p>
         </div>
       </div>
     </footer>

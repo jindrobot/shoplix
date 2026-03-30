@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { LocaleProvider } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Modkit — E-commerce nástroje pro český trh",
@@ -29,9 +30,11 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <LocaleProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </LocaleProvider>
       </body>
     </html>
   );

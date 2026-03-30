@@ -1,13 +1,12 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import { products } from "@/lib/products";
-
-export const metadata: Metadata = {
-  title: "Pokladna — Modkit",
-  description: "Dokončete objednávku vašeho Modkit nástroje.",
-};
+import { useTranslations } from "@/lib/i18n";
 
 export default function PokladnaPage() {
+  const t = useTranslations();
+
   return (
     <div className="min-h-screen pt-28 pb-24 md:pt-36">
       <div className="mx-auto max-w-4xl px-6">
@@ -16,14 +15,14 @@ export default function PokladnaPage() {
             Modkit
           </Link>
           <span>/</span>
-          <span className="text-text-muted">Pokladna</span>
+          <span className="text-text-muted">{t.pokladna.breadcrumb}</span>
         </nav>
 
         <h1 className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight md:text-4xl">
-          Pokladna
+          {t.pokladna.title}
         </h1>
         <p className="mt-3 text-text-muted">
-          Vyberte produkt a vyplňte fakturační údaje.
+          {t.pokladna.subtitle}
         </p>
 
         <div className="mt-12 grid gap-10 md:grid-cols-5">
@@ -32,7 +31,7 @@ export default function PokladnaPage() {
             {/* Výběr produktu */}
             <fieldset>
               <legend className="font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-widest text-text-dim">
-                Vyberte produkt
+                {t.pokladna.selectProduct}
               </legend>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {products.map((p) => (
@@ -61,53 +60,57 @@ export default function PokladnaPage() {
             {/* Fakturační údaje */}
             <fieldset className="mt-10">
               <legend className="font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-widest text-text-dim">
-                Fakturační údaje
+                {t.pokladna.billingDetails}
               </legend>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div className="sm:col-span-2">
                   <label className="block text-sm text-text-muted">
-                    Firma / Jméno
+                    {t.pokladna.companyLabel}
                   </label>
                   <input
                     type="text"
                     className="mt-1.5 w-full rounded-lg border border-border bg-bg-elevated px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent"
-                    placeholder="Váš e-shop s.r.o."
+                    placeholder={t.pokladna.companyPlaceholder}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-text-muted">IČO</label>
+                  <label className="block text-sm text-text-muted">
+                    {t.pokladna.icoLabel}
+                  </label>
                   <input
                     type="text"
                     className="mt-1.5 w-full rounded-lg border border-border bg-bg-elevated px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent"
-                    placeholder="12345678"
+                    placeholder={t.pokladna.icoPlaceholder}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-text-muted">DIČ</label>
+                  <label className="block text-sm text-text-muted">
+                    {t.pokladna.dicLabel}
+                  </label>
                   <input
                     type="text"
                     className="mt-1.5 w-full rounded-lg border border-border bg-bg-elevated px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent"
-                    placeholder="CZ12345678"
+                    placeholder={t.pokladna.dicPlaceholder}
                   />
                 </div>
                 <div className="sm:col-span-2">
                   <label className="block text-sm text-text-muted">
-                    E-mail
+                    {t.pokladna.emailLabel}
                   </label>
                   <input
                     type="email"
                     className="mt-1.5 w-full rounded-lg border border-border bg-bg-elevated px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent"
-                    placeholder="jan@eshop.cz"
+                    placeholder={t.pokladna.emailPlaceholder}
                   />
                 </div>
                 <div className="sm:col-span-2">
                   <label className="block text-sm text-text-muted">
-                    Adresa
+                    {t.pokladna.addressLabel}
                   </label>
                   <input
                     type="text"
                     className="mt-1.5 w-full rounded-lg border border-border bg-bg-elevated px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent"
-                    placeholder="Ulice 123, 110 00 Praha"
+                    placeholder={t.pokladna.addressPlaceholder}
                   />
                 </div>
               </div>
@@ -119,17 +122,17 @@ export default function PokladnaPage() {
                 type="button"
                 className="inline-flex h-12 w-full items-center justify-center rounded-xl bg-accent font-[family-name:var(--font-display)] text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:scale-[1.01] active:scale-[0.99] sm:w-auto sm:px-8"
               >
-                Pokračovat k platbě
+                {t.pokladna.submitButton}
               </button>
               <p className="mt-3 text-xs text-text-dim">
-                Platební brána bude připojena brzy. Zatím nás{" "}
+                {t.pokladna.submitNote}{" "}
                 <Link
                   href="/kontakt"
                   className="text-accent transition-colors hover:text-accent-hover"
                 >
-                  kontaktujte
+                  {t.pokladna.submitNoteLink}
                 </Link>{" "}
-                pro objednávku.
+                {t.locale === "cs" ? "pro objednávku." : "w celu złożenia zamówienia."}
               </p>
             </div>
           </div>
@@ -138,22 +141,22 @@ export default function PokladnaPage() {
           <aside className="md:col-span-2">
             <div className="sticky top-28 rounded-2xl border border-border bg-bg-card p-6">
               <h3 className="font-[family-name:var(--font-display)] font-semibold">
-                Souhrn objednávky
+                {t.pokladna.summaryTitle}
               </h3>
               <div className="mt-6 space-y-3 border-b border-border pb-6 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-text-muted">Typ licence</span>
-                  <span>Jednorázová</span>
+                  <span className="text-text-muted">{t.pokladna.licenseType}</span>
+                  <span>{t.pokladna.licenseValue}</span>
                 </div>
               </div>
               <div className="mt-6 flex justify-between">
-                <span className="text-text-muted">Celkem</span>
+                <span className="text-text-muted">{t.pokladna.total}</span>
                 <span className="font-[family-name:var(--font-display)] text-xl font-bold">
-                  od 49 Kč
+                  {t.pokladna.totalValue}
                 </span>
               </div>
               <p className="mt-4 text-xs text-text-dim">
-                Cena bez DPH. 14denní trial zdarma.
+                {t.pokladna.totalNote}
               </p>
             </div>
           </aside>

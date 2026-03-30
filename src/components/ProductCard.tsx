@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import type { Product } from "@/lib/products";
+import { useTranslations } from "@/lib/i18n";
 
 export function ProductCard({
   product,
@@ -8,6 +11,8 @@ export function ProductCard({
   product: Product;
   index: number;
 }) {
+  const t = useTranslations();
+
   return (
     <Link
       href={`/produkt/${product.slug}`}
@@ -23,7 +28,9 @@ export function ProductCard({
               product.badge === "bestseller" ? "#E8553A" : "#10B981",
           }}
         >
-          {product.badge === "bestseller" ? "Bestseller" : "Novinka"}
+          {product.badge === "bestseller"
+            ? t.productCard.badgeBestseller
+            : t.productCard.badgeNew}
         </div>
       )}
 
@@ -83,7 +90,7 @@ export function ProductCard({
               color: product.color,
             }}
           >
-            Detail →
+            {t.productCard.detail}
           </span>
         </div>
       </div>
